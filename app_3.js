@@ -23,7 +23,8 @@ app.post("/wallet", function(req, res) {
     var bn = bitcore.crypto.BN.fromBuffer(hash);
     var pk = new bitcore.PrivateKey(bn).toWIF();
     var addy = new bitcore.PrivateKey(bn).toAddress();
-    res.send();
+    res.send("The Brain Wallet of: " + brainsrc + "<br>Addy: "
+     + addy + "<br>PrivateKey: " + pk);
 })
 
 app.listen(8080, function() {
